@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+    <style>
+        .text-large {
+            font-size: 30px;
+        }
+
+        .text-small {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h1>REST API</h1>
+        </section>
+        <section>
+            <section>
+                <p>Что такое HTTP-запрос JavaScript?</p>
+                <div class="fragment" data-fragment-index="1">
+                    <p>HTTP-запросы в JavaScript представляют собой набор
+                        предопределенных методов, используемых для взаимодействия с данными, хранящимися на серверах.</p>
+                    <img src="./img/client-server.png" alt="client-server">
+                </div>
+            </section>
+            <section>
+                <p>Ответы, отправляемые сервером, обычно связаны с кодами состояния. Эти коды помогают нам понять, что
+                    сервер пытается сказать, когда получает запрос. Вот некоторые из них и что они означают:</p>
+                <ul>
+                    <li>
+                        <ya-tr-span data-index="58-0" data-translated="true" data-source-lang="en" data-target-lang="ru"
+                                    data-value="100–199 denotes an informational response."
+                                    data-translation="100-199 обозначает информационный ответ." data-ch="0"
+                                    data-type="trSpan" data-selected="false">100-199 обозначает информационный ответ.
+                        </ya-tr-span>
+                    </li>
+                    <li>
+                        <ya-tr-span data-index="60-0" data-translated="true" data-source-lang="en" data-target-lang="ru"
+                                    data-value="200–299 denotes a successful request."
+                                    data-translation="200-299 обозначает успешный запрос." data-ch="0"
+                                    data-type="trSpan" data-selected="false">200-299 обозначает успешный запрос.
+                        </ya-tr-span>
+                    </li>
+                    <li>
+                        <ya-tr-span data-index="61-0" data-translated="true" data-source-lang="en" data-target-lang="ru"
+                                    data-value="300–399 denotes redirection."
+                                    data-translation="300-399 обозначает перенаправление." data-ch="0"
+                                    data-type="trSpan">300-399 обозначает перенаправление.
+                        </ya-tr-span>
+                    </li>
+                    <li>
+                        <ya-tr-span data-index="62-0" data-translated="true" data-source-lang="en" data-target-lang="ru"
+                                    data-value="400–499 denotes client error."
+                                    data-translation="400-499 обозначает ошибку клиента." data-ch="0"
+                                    data-type="trSpan">400-499 обозначает ошибку клиента.
+                        </ya-tr-span>
+                    </li>
+                    <li>
+                        <ya-tr-span data-index="63-0" data-translated="true" data-source-lang="en" data-target-lang="ru"
+                                    data-value="500–599 denotes " data-translation="500-599 обозначает " data-ch="0"
+                                    data-type="trSpan">500-599 обозначает
+                        </ya-tr-span>
+                        <a href="https://translated.turbopages.org/proxy_u/en-ru.ru.3a80e01e-65378bc3-5e480992-74722d776562/https/kinsta.com/blog/500-internal-server-error/"
+                           target="_self" rel="noopener noreferrer">
+                            <ya-tr-span data-index="63-0" data-translated="true" data-source-lang="en"
+                                        data-target-lang="ru" data-value="server error"
+                                        data-translation="ошибку сервера" data-ch="0" data-type="trSpan">ошибку сервера
+                            </ya-tr-span>
+                        </a>
+                        <ya-tr-span data-index="63-0" data-translated="true" data-source-lang="en" data-target-lang="ru"
+                                    data-value="." data-translation="." data-ch="0" data-type="trSpan">.
+                        </ya-tr-span>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <p>CRUD</p>
+                <img src="./img/crud.png" alt="crud">
+            </section>
+            <section>
+                <p>Основные методы</p>
+                <ul>
+                    <li><p><b>GET</b> - запрашивает представление ресурса. Запросы с использованием этого метода могут только извлекать
+                        данные.</p></li>
+                    <li><p><b>POST</b> - для отправки сущностей к определённому ресурсу. Часто вызывает изменение состояния или
+                        какие-то побочные эффекты на сервере.</p></li>
+                    <li><p><b>PUT</b> - заменяет все текущие представления ресурса данными запроса</p></li>
+                    <li><p><b>PATCH</b> - используется для частичного изменения ресурса.</p></li>
+                    <li><p><b>DELETE</b> - удаляет указанный ресурс.</p></li>
+                </ul>
+            </section>
+            <section>
+                <p>Заголовки</p>
+                <p>HTTP-заголовок представляет собой строку формата «Имя-Заголовок:Значение»</p>
+                <img src="./img/headers.png" alt="">
+            </section>
+        </section>
+        <section>
+            <p>Три основных метода вызова API</p>
+            <ol class="">
+                <li id="20ce"
+                    class="lr ls ev lt b lu lv lw lx ly lz ma mb mc oq me mf mg or mi mj mk os mm mn mo ot nw nx bj"
+                    data-selectable-paragraph=""><strong class="lt mq"><em class="mr">XMLHttpReques;</em></strong></li>
+                <li id="1668"
+                    class="lr ls ev lt b lu ny lw lx ly nz ma mb mc oa me mf mg ob mi mj mk oc mm mn mo ot nw nx bj"
+                    data-selectable-paragraph=""><strong class="lt mq"><em class="mr">Fetch;</em></strong></li>
+                <li id="5c14"
+                    class="lr ls ev lt b lu ny lw lx ly nz ma mb mc oa me mf mg ob mi mj mk oc mm mn mo ot nw nx bj"
+                    data-selectable-paragraph=""><strong class="lt mq"><em class="mr">Axios.</em></strong></li>
+            </ol>
+        </section>
+        <section>
+            <section>
+                <p>XMLHttpRequest</p>
+            </section>
+            <section>
+                <p>XMLHttpRequest — это объект браузера, который позволяет делать HTTP-запросы на JavaScript. В
+                    настоящее время все современные веб-браузеры имеют встроенный объект XMLHttpRequest для запроса
+                    данных с сервера</p>
+            </section>
+            <section>
+                <p>XMLHttpRequest производит две операции: синхронную и асинхронную.</p>
+                <p>Асинхронная</p>
+                <img src="./img/asyncXml.png" alt="async">
+            </section>
+            <section>
+                <p>Синхронная</p>
+                <p>Если в методе open третий параметр async установлен в false, то запрос выполняется синхронно</p>
+                <img src="./img/syncXml.png" alt="sync">
+            </section>
+        </section>
+        <section>
+            <section>
+                <p>Fetch</p>
+                <p class="fragment" data-fragment-index="1">JS-метод fetch() используется для запроса к серверу и
+                    загрузки данных на веб-страницах. Fetch API — такой же простой, интуитивно понятный интерфейс, как и
+                    XMLHttpRequest, применяемый для асинхронного использования ресурсо</p>
+            </section>
+            <section>
+                <p>Fetch API очень просто использовать. Нужно просто передать URL, путь к нужному ресурсу, методу
+                    fetch():</p>
+                <img src="./img/fetch.png" alt="fetch">
+                <p class="text-large">В качестве параметра в fetch() передается маршрут к необходимому ресурсу. Он
+                    возвращает промис, который при выполнении передает ответ в then(). Метод catch() перехватывает
+                    ошибки, если запрос не удается завершить из-за сбоя в сети или по какой-либо другой причине.</p>
+            </section>
+            <section>
+                <p>Типичный запрос с помощью fetch состоит из двух операторов await:</p>
+                <pre><code>let response = await fetch(url, options); // завершается с заголовками ответа
+let result = await response.json(); // читать тело ответа в формате JSON</code></pre>
+            </section>
+            <section class="text-small">
+                <p>Параметры ответа:</p>
+                <ul>
+                    <li><code>response.status</code> – HTTP-код ответа,</li>
+                    <li><code>response.ok</code> – <code>true</code>, если статус ответа в диапазоне 200-299.</li>
+                    <li><code>response.headers</code> – похожий на <code>Map</code> объект с HTTP-заголовками.</li>
+                </ul>
+                <p>Методы для получения тела ответа:</p>
+                <ul>
+                    <li><strong><code>response.text()</code></strong> – возвращает ответ как обычный текст,</li>
+                    <li><strong><code>response.json()</code></strong> – декодирует ответ в формате JSON,</li>
+                    <li><strong><code>response.formData()</code></strong> – возвращает ответ как объект FormData
+                        (кодировка form/multipart, см. следующую главу),
+                    </li>
+                    <li><strong><code>response.blob()</code></strong> – возвращает объект как <a href="/blob">Blob</a>
+                        (бинарные данные с типом),
+                    </li>
+                    <li><strong><code>response.arrayBuffer()</code></strong> – возвращает ответ как <a
+                        href="/arraybuffer-binary-arrays">ArrayBuffer</a> (низкоуровневые бинарные данные),
+                    </li>
+                </ul>
+                <p>Опции fetch, которые мы изучили на данный момент:</p>
+                <ul>
+                    <li><code>method</code> – HTTP-метод,</li>
+                    <li><code>headers</code> – объект с запрашиваемыми заголовками (не все заголовки разрешены),</li>
+                    <li><code>body</code> – данные для отправки (тело запроса) в виде текста, <code>FormData</code>,
+                        <code>BufferSource</code>, <code>Blob</code> или <code>UrlSearchParams</code>.
+                    </li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <section>
+                <p>Axios</p>
+                <p class="fragment" data-fragment-index="1">Axios — это библиотека с открытым исходным кодом, которая
+                    помогает выполнять HTTP-запросы. Она предоставляет методы .get(), .post() и т. д.</p>
+            </section>
+            <section>
+                <p>Базовый API Axios</p>
+                <img src="./img/axios.png" alt="axios">
+            </section>
+        </section>
+    </div>
+</div>
+
+<script src="dist/reveal.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+    })
+</script>
+</body>
+</html>
